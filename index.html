@@ -1,0 +1,463 @@
+<title>Abdelhamid Mhadhbi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Cairo:wght@400;600&display=swap">
+<style>
+  :root{
+    --bg:#FBF8F2;
+    --panel:#FFFFFF;
+    --ink:#131C2E;
+    --body:#3C4759;
+    --muted:#6B7689;
+    --line:#E4DCCB;
+    --gold:#A5762C;
+    --gold-soft:#F3E8D2;
+    --shadow:0 1px 2px rgba(19,28,46,.06);
+    color-scheme:light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C1220; --panel:#141D2E; --ink:#EDEFF4; --body:#BAC2D1; --muted:#8D97A9;
+      --line:#253045; --gold:#D9A950; --gold-soft:#2A2314;
+      --shadow:0 1px 2px rgba(0,0,0,.35); color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C1220; --panel:#141D2E; --ink:#EDEFF4; --body:#BAC2D1; --muted:#8D97A9;
+    --line:#253045; --gold:#D9A950; --gold-soft:#2A2314;
+    --shadow:0 1px 2px rgba(0,0,0,.35); color-scheme:dark;
+  }
+
+  body{
+    background:var(--bg); color:var(--body);
+    font-family:"Public Sans","Helvetica Neue",Arial,sans-serif;
+    font-size:16px; line-height:1.65; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1040px;margin:0 auto;padding-inline:20px;padding-block:0 64px;}
+  h1,h2,h3{color:var(--ink);text-wrap:balance;margin:0;}
+  h1{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:clamp(2.1rem,5.5vw,3.4rem);line-height:1.06;letter-spacing:-.02em;}
+  h2{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:clamp(1.35rem,3vw,1.7rem);letter-spacing:-.01em;}
+  h3{font-family:"Public Sans",sans-serif;font-weight:600;font-size:1.03rem;letter-spacing:-.005em;}
+  p{margin:0;}
+  a{color:var(--ink);text-underline-offset:3px;text-decoration-color:var(--gold);}
+
+  .ar{font-family:"Cairo",system-ui,sans-serif;direction:rtl;unicode-bidi:isolate;}
+  .eyebrow{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);}
+  .mono{font-family:"IBM Plex Mono",ui-monospace,monospace;}
+
+  header{display:flex;flex-wrap:wrap;gap:16px;align-items:baseline;justify-content:space-between;padding-block:30px 0;}
+  .brandmark{font-family:"IBM Plex Mono",monospace;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
+  nav{display:flex;flex-wrap:wrap;gap:16px;font-size:.85rem;}
+  nav a{color:var(--muted);text-decoration:none;}
+  nav a:hover{color:var(--ink);}
+
+  .hero{display:grid;gap:28px;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);align-items:end;padding-block:52px 38px;border-bottom:1px solid var(--line);}
+  .hero .lede{font-size:1.04rem;max-width:56ch;margin-top:18px;}
+  .role-line{font-size:.95rem;color:var(--ink);margin-top:14px;font-weight:500;}
+  .name-ar{margin-top:8px;color:var(--muted);font-size:1.02rem;}
+  .hero-meta{display:grid;gap:12px;}
+  .meta-row{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:baseline;border-top:1px solid var(--line);padding-top:9px;}
+  .meta-row .k{font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+  .meta-row .v{color:var(--ink);font-size:.9rem;}
+  .open{display:inline-flex;align-items:center;gap:8px;margin-top:16px;background:var(--gold-soft);border:1px solid var(--gold);color:var(--gold);
+    border-radius:999px;padding:4px 13px;font-size:.76rem;font-family:"IBM Plex Mono",monospace;letter-spacing:.06em;}
+
+  section{padding-block:46px;border-bottom:1px solid var(--line);}
+  .sec-head{display:grid;gap:8px;margin-bottom:26px;}
+
+  .caps{display:grid;gap:18px;grid-template-columns:repeat(3,minmax(0,1fr));}
+  .cap{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:20px;box-shadow:var(--shadow);display:grid;gap:9px;align-content:start;}
+  .cap p{font-size:.91rem;}
+
+  .item{display:grid;grid-template-columns:150px minmax(0,1fr);gap:26px;padding-block:24px;border-top:1px solid var(--line);}
+  .item:first-child{border-top:none;padding-top:0;}
+  .side{display:grid;gap:5px;align-content:start;}
+  .side span{font-family:"IBM Plex Mono",monospace;font-size:.69rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);}
+  .item h3{margin-bottom:5px;}
+  .item p{font-size:.94rem;max-width:62ch;}
+  ul.points{margin:11px 0 0;padding-left:18px;display:grid;gap:5px;font-size:.92rem;}
+  ul.points li::marker{color:var(--gold);}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:13px;}
+  .tag{font-family:"IBM Plex Mono",monospace;font-size:.67rem;letter-spacing:.05em;border:1px solid var(--line);border-radius:999px;padding:3px 9px;color:var(--muted);background:var(--panel);}
+  .tag.accent{color:var(--gold);border-color:var(--gold);background:var(--gold-soft);}
+
+  /* career */
+  .job{display:grid;grid-template-columns:170px minmax(0,1fr);gap:26px;padding-block:22px;border-top:1px solid var(--line);}
+  .job:first-of-type{border-top:none;padding-top:0;}
+  .job .when{font-family:"IBM Plex Mono",monospace;font-size:.74rem;color:var(--muted);letter-spacing:.03em;font-variant-numeric:tabular-nums;}
+  .job .where{font-size:.8rem;color:var(--muted);margin-top:3px;}
+  .job .titles{display:grid;gap:2px;margin-bottom:8px;}
+  .job .alt{font-size:.83rem;color:var(--muted);}
+  .job p{font-size:.93rem;max-width:64ch;}
+
+  .twocol{display:grid;gap:34px;grid-template-columns:minmax(0,1fr) minmax(0,1fr);}
+  .edu{display:grid;gap:18px;}
+  .degree{border-left:2px solid var(--gold);padding-left:14px;display:grid;gap:2px;}
+  .degree .d{color:var(--ink);font-weight:600;font-size:.97rem;}
+  .degree .s{font-size:.88rem;color:var(--muted);}
+  .certs{list-style:none;margin:0;padding:0;display:grid;gap:9px;}
+  .certs li{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:8px;font-size:.92rem;color:var(--ink);}
+  .certs .issuer{display:block;font-size:.82rem;color:var(--muted);}
+  .certs .yr{font-family:"IBM Plex Mono",monospace;font-size:.76rem;color:var(--muted);font-variant-numeric:tabular-nums;}
+
+  .stack{display:grid;gap:20px;grid-template-columns:repeat(4,minmax(0,1fr));}
+  .stack h3{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-family:"IBM Plex Mono",monospace;font-weight:500;}
+  .stack ul{list-style:none;margin:9px 0 0;padding:0;display:grid;gap:5px;font-size:.91rem;color:var(--ink);}
+
+  .langs{display:grid;gap:14px;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:26px;}
+  .lang{border-left:2px solid var(--gold);padding-left:14px;}
+  .lang .lvl{font-size:.86rem;color:var(--muted);}
+  .lang .h{color:var(--ink);font-weight:600;}
+
+  .contact{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px;}
+  .chip{display:inline-flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:10px 14px;box-shadow:var(--shadow);}
+  .chip .k{font-family:"IBM Plex Mono",monospace;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+  .chip .v{color:var(--ink);font-size:.89rem;user-select:all;}
+  button.copy{font:inherit;font-size:.76rem;border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:3px;padding:2px 8px;cursor:pointer;}
+  button.copy:hover{color:var(--gold);border-color:var(--gold);}
+  :focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
+
+  footer{padding-block:26px;font-size:.81rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;}
+
+  @media (max-width:860px){
+    .hero{grid-template-columns:1fr;align-items:start;}
+    .caps{grid-template-columns:1fr 1fr;}
+    .stack{grid-template-columns:1fr 1fr;}
+    .twocol{grid-template-columns:1fr;gap:34px;}
+    .langs{grid-template-columns:1fr;}
+  }
+  @media (max-width:560px){
+    .caps{grid-template-columns:1fr;}
+    .item,.job{grid-template-columns:1fr;gap:10px;}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
+</style>
+
+<div class="wrap">
+
+  <header>
+    <span class="brandmark">Abdelhamid Mhadhbi · Doha, Qatar</span>
+    <nav>
+      <a href="#capabilities">What I do</a>
+      <a href="#work">Work</a>
+      <a href="#career">Career</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div>
+      <span class="eyebrow">IT Systems &amp; Digital Operations Specialist</span>
+      <h1>I keep the systems a business runs on working — and build the ones it is missing.</h1>
+      <p class="ar name-ar">عبد الحميد المهذبي — الدوحة، قطر</p>
+      <p class="lede">
+        Thirteen years across media, trading, medical supply and real estate, in Tunisia and Qatar.
+        I have supervised a 28-person technical team in broadcasting, run CRM and business systems for
+        trading and medical companies, and now handle operations, systems and bilingual campaign
+        production at a licensed Doha real estate agency.
+      </p>
+      <p class="role-line">Office Manager at Planned Real Estate · بلاند العقارية</p>
+      <span class="open">Open to opportunities in Doha — on-site or hybrid</span>
+    </div>
+    <div class="hero-meta">
+      <div class="meta-row"><span class="k">Based</span><span class="v">Doha, Qatar</span></div>
+      <div class="meta-row"><span class="k">Experience</span><span class="v">13+ years, Tunisia &amp; Qatar</span></div>
+      <div class="meta-row"><span class="k">Education</span><span class="v">BSc Computational Science, ISI Tunisia</span></div>
+      <div class="meta-row"><span class="k">Languages</span><span class="v">Arabic · English · French</span></div>
+      <div class="meta-row"><span class="k">Services</span><span class="v">IT consulting · Networking · SEO · Telecom</span></div>
+    </div>
+  </div>
+
+  <section id="capabilities">
+    <div class="sec-head">
+      <span class="eyebrow">What I do</span>
+      <h2>Operations, systems, and the tools in between</h2>
+    </div>
+    <div class="caps">
+      <div class="cap">
+        <h3>Business systems &amp; IT support</h3>
+        <p>CRM administration, data accuracy, troubleshooting and day-to-day support across QuickBooks, Microsoft 365, CMS platforms and internal software — keeping the systems a team depends on running without drama.</p>
+      </div>
+      <div class="cap">
+        <h3>Digital operations &amp; marketing</h3>
+        <p>Bilingual Arabic/English campaigns, company websites, SEO content, social channels and lead flows — coordinated with the sales side so campaigns turn into enquiries, not impressions.</p>
+      </div>
+      <div class="cap">
+        <h3>Internal tooling &amp; automation</h3>
+        <p>When the tool for a step did not exist, I built it: Python and Flask applications shaped around how the team already works, with AI used to remove typing and a human on every approval.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="sec-head">
+      <span class="eyebrow">Selected work</span>
+      <h2>Things I built and maintain</h2>
+    </div>
+
+    <article class="item">
+      <div class="side"><span>In production</span><span>Flask · SQLite</span></div>
+      <div>
+        <h3>Planned CRM</h3>
+        <p>A web CRM for the agency's operations, built and maintained end to end. It started as a CustomTkinter desktop application and moved to Flask once the whole team needed access from anywhere on the floor.</p>
+        <ul class="points">
+          <li>Role-based access for admins, managers and agents</li>
+          <li>Leads pipeline with follow-up scheduling and agent performance metrics</li>
+          <li>Deals and commission tracking, WhatsApp message templates, branded Excel export</li>
+          <li>Bulk property actions, import history with rollback, automatic backups</li>
+        </ul>
+        <div class="tags">
+          <span class="tag accent">Python</span><span class="tag">Flask</span><span class="tag">SQLite</span><span class="tag">RBAC</span><span class="tag">Arabic / English</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="item">
+      <div class="side"><span>Inside the CRM</span><span>Anthropic API</span></div>
+      <div>
+        <h3>AI listing-intake agent</h3>
+        <p>Listings arrive as messy WhatsApp and email messages — mixed Arabic and English, Arabic numerals, no structure. The agent parses them into draft records that wait for a human to review before anything enters the database.</p>
+        <ul class="points">
+          <li>Arabic numeral normalisation and mixed-script handling</li>
+          <li>Draft-then-approve: nothing is written to the live table unattended</li>
+          <li>Calls the API through the standard library to stay clean on Python 3.14</li>
+        </ul>
+        <div class="tags">
+          <span class="tag accent">LLM integration</span><span class="tag">Data normalisation</span><span class="tag">Human-in-the-loop</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="item">
+      <div class="side"><span>Marketing</span><span>Rendering pipeline</span></div>
+      <div>
+        <h3>Bilingual ad creative pipeline</h3>
+        <p>A template-driven system for campaign assets in both languages, so a new listing becomes a full set of posts without a designer starting from a blank canvas.</p>
+        <ul class="points">
+          <li>Mustache templates rendering to SVG and HTML, with RTL-aware layouts</li>
+          <li>Cairo, Montserrat, Great Vibes and Aref Ruqaa on the agency's gold-and-navy identity</li>
+          <li>Photo enhancement with Pillow; 9:16 story and reel formats for Instagram and TikTok</li>
+        </ul>
+        <div class="tags">
+          <span class="tag accent">RTL typography</span><span class="tag">SVG</span><span class="tag">Pillow</span><span class="tag">Mustache</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="item">
+      <div class="side"><span>Standalone tool</span><span>HTML · JS</span></div>
+      <div>
+        <h3>LPO &amp; invoice manager</h3>
+        <p>A single-file application for local purchase orders and invoices, built for a team that lives on WhatsApp rather than a procurement portal.</p>
+        <ul class="points">
+          <li>PDF generation and direct WhatsApp sharing</li>
+          <li>Multi-currency support with VAT calculation</li>
+        </ul>
+        <div class="tags"><span class="tag accent">Zero-install</span><span class="tag">PDF</span><span class="tag">VAT</span></div>
+      </div>
+    </article>
+  </section>
+
+  <section id="career">
+    <div class="sec-head">
+      <span class="eyebrow">Career</span>
+      <h2>Where I have worked</h2>
+    </div>
+
+    <div class="job">
+      <div>
+        <div class="when">Jan 2025 — Present</div>
+        <div class="where">Planned Real Estate · Doha</div>
+      </div>
+      <div>
+        <div class="titles">
+          <h3>Office Manager</h3>
+          <span class="alt">Previously Office Administrator · Jul 2026 in current role</span>
+        </div>
+        <p>Run the office and the systems behind it at a licensed Qatari real estate agency. Plan and produce bilingual Arabic/English property campaigns — feed posts, stories, reels, carousels and flyers — on RTL-aware templates in the agency's gold-and-navy brand identity, and build the internal tools the team works in.</p>
+      </div>
+    </div>
+
+    <div class="job">
+      <div>
+        <div class="when">Oct 2023 — Present</div>
+        <div class="where">Alnkaa Medical Trading · Doha</div>
+      </div>
+      <div>
+        <div class="titles">
+          <h3>Information Technology Support Specialist</h3>
+          <span class="alt">Also IT System Specialist · Marketing Administrative Coordinator</span>
+        </div>
+        <p>Drive digital transformation and operational efficiency by maintaining core business systems and internal software tools. Improve data accuracy, manage customer databases and CRM for targeted outreach and lead handling, and keep brand consistency across customer-facing communications between departments.</p>
+      </div>
+    </div>
+
+    <div class="job">
+      <div>
+        <div class="when">Feb 2020 — Feb 2023</div>
+        <div class="where">Khuzama Trading · Doha</div>
+      </div>
+      <div>
+        <div class="titles">
+          <h3>Technical Systems Coordinator</h3>
+          <span class="alt">Also Technical Coordinator · Operations Support Coordinator</span>
+        </div>
+        <p>Streamlined operations and inventory tracking through better system organisation and database management. Managed financial data and business reporting in QuickBooks, coordinated marketing collateral and communications between suppliers and clients, and prepared operational reports that identified process improvements.</p>
+      </div>
+    </div>
+
+    <div class="job">
+      <div>
+        <div class="when">2020 — 2023</div>
+        <div class="where">Habra TCS · Doha</div>
+      </div>
+      <div>
+        <div class="titles"><h3>Marketing Manager</h3></div>
+        <p>Led marketing for a Doha contracting company serving residential and commercial clients — setting the plan and managing the budget across HVAC and refrigeration, electrical and plumbing, CCTV, smart home and access control, renovation, interior fit-out, flooring, pools and landscaping. Managed the website, online booking, request-a-quote flow and blog with Arabic and English SEO content, ran the social channels that generated enquiries, and produced the company profile and materials used in project bids.</p>
+      </div>
+    </div>
+
+    <div class="job">
+      <div>
+        <div class="when">2013 — Oct 2019</div>
+        <div class="where">Radio K FM · Kasserine, Tunisia</div>
+      </div>
+      <div>
+        <div class="titles">
+          <h3>Technical Operations &amp; Systems Manager</h3>
+          <span class="alt">Previously Technical Operations Manager · Operations Supervisor</span>
+        </div>
+        <p>Led and supervised a technical team of 28, keeping daily broadcasting and production schedules running. Oversaw technical infrastructure and resolved critical system issues quickly, coordinated multi-departmental schedules, and upgraded media systems to improve operational efficiency.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="twocol">
+      <div>
+        <div class="sec-head">
+          <span class="eyebrow">Education</span>
+          <h2>Computer science, Tunis</h2>
+        </div>
+        <div class="edu">
+          <div class="degree">
+            <span class="d">Bachelor's Degree, Computational Science</span>
+            <span class="s">Higher Institute of Computer Science — Tunisia (ISI)</span>
+            <span class="s mono">2010 – 2013 · Grade 13.59/20</span>
+          </div>
+          <div class="degree">
+            <span class="d">Diploma of Superior Technician, Computational Science</span>
+            <span class="s">Higher Institute of Computer Science — Tunisia (ISI)</span>
+            <span class="s mono">2007 – 2010 · Grade 18/20</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="sec-head">
+          <span class="eyebrow">Certifications</span>
+          <h2>Licenses &amp; certifications</h2>
+        </div>
+        <ul class="certs">
+          <li><span>Search Ads 360 Certification Exam<span class="issuer">Google</span></span><span class="yr">2023</span></li>
+          <li><span>Fundamentals in Digital Marketing<span class="issuer">Google</span></span><span class="yr">2023</span></li>
+          <li><span>Digital Skills: Artificial Intelligence<span class="issuer">Accenture</span></span><span class="yr">2023</span></li>
+          <li><span>Digital Skills: Web Analytics<span class="issuer">Accenture</span></span><span class="yr">2023</span></li>
+          <li><span>Digital Skills: Social Media<span class="issuer">Accenture</span></span><span class="yr">2023</span></li>
+          <li><span>Digital Skills: Digital Marketing<span class="issuer">Accenture</span></span><span class="yr">2023</span></li>
+          <li><span>Advanced English 505<span class="issuer">Alison</span></span><span class="yr">2023</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="stack">
+    <div class="sec-head">
+      <span class="eyebrow">Stack</span>
+      <h2>What I reach for</h2>
+    </div>
+    <div class="stack">
+      <div>
+        <h3>Systems</h3>
+        <ul><li>Microsoft 365</li><li>QuickBooks</li><li>CRM platforms</li><li>Computer networking</li></ul>
+      </div>
+      <div>
+        <h3>Build</h3>
+        <ul><li>Python 3.14</li><li>Flask</li><li>SQLite</li><li>HTML, CSS, JavaScript</li></ul>
+      </div>
+      <div>
+        <h3>AI &amp; automation</h3>
+        <ul><li>Anthropic API</li><li>Claude Code</li><li>MCP tooling</li><li>Prompt-driven intake</li></ul>
+      </div>
+      <div>
+        <h3>Digital marketing</h3>
+        <ul><li>SEO (Arabic &amp; English)</li><li>Search Ads 360</li><li>Web analytics</li><li>CMS &amp; social channels</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="sec-head">
+      <span class="eyebrow">About</span>
+      <h2>How I work</h2>
+    </div>
+    <p style="max-width:64ch;">
+      I have spent my career close to the operation rather than above it — the broadcast that has to go
+      out on time, the stock count that has to match, the listing that has to be live in both languages
+      before the weekend. That is where I learned to troubleshoot fast, protect data accuracy, and spot
+      the step that should have been automated three months ago. Everything I build is bilingual from
+      the first screen rather than translated afterwards, and anything automated stops for a person
+      before it touches a live record.
+    </p>
+    <div class="langs">
+      <div class="lang"><div class="ar h">العربية</div><div class="lvl">Arabic — native, including Algerian dialect</div></div>
+      <div class="lang"><div class="h">English</div><div class="lvl">Professional working proficiency</div></div>
+      <div class="lang"><div class="h">Français</div><div class="lvl">Educated in French-language institutions in Tunisia</div></div>
+    </div>
+  </section>
+
+  <section id="contact" style="border-bottom:none;">
+    <div class="sec-head">
+      <span class="eyebrow">Contact</span>
+      <h2>Get in touch</h2>
+    </div>
+    <p style="max-width:58ch;">Open to conversations about IT operations, business systems and digital operations roles in Qatar and the wider Gulf.</p>
+    <div class="contact">
+      <span class="chip">
+        <span class="k">Phone</span><span class="v" id="phone">+974 6693 8095</span>
+        <button class="copy" type="button" data-target="phone">Copy</button>
+      </span>
+      <span class="chip">
+        <span class="k">Email</span><span class="v" id="email">mhadhbi.abdelhamid@gmail.com</span>
+        <button class="copy" type="button" data-target="email">Copy</button>
+      </span>
+      <span class="chip">
+        <span class="k">LinkedIn</span>
+        <a class="v" href="https://www.linkedin.com/in/abdelhamid-m-824b4a120/">linkedin.com/in/abdelhamid-m</a>
+      </span>
+    </div>
+  </section>
+
+  <footer>
+    <span>Abdelhamid Mhadhbi — IT Systems &amp; Digital Operations Specialist, Doha</span>
+    <span class="ar">بلاند العقارية</span>
+  </footer>
+
+</div>
+
+<script>
+  document.querySelectorAll("button.copy").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var el = document.getElementById(btn.dataset.target);
+      var text = el.textContent.trim();
+      var done = function(){ btn.textContent = "Copied"; setTimeout(function(){ btn.textContent = "Copy"; }, 1600); };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done).catch(function(){ selectNode(el); });
+      } else { selectNode(el); }
+    });
+  });
+  function selectNode(el){
+    var r = document.createRange(); r.selectNodeContents(el);
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+  }
+</script>
